@@ -7,10 +7,11 @@
 
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button mnemonicParsing="false" onAction="#loadFileButton" text="Wczytaj Plik" />
+      <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#loadFileButton" prefHeight="25.0" prefWidth="163.0" text="Load Graph without Costs" />
       <TextArea fx:id="textArea" layoutX="50.0" layoutY="615.0" prefHeight="150.0" prefWidth="900.0" />
       <Pane fx:id="graphPane" layoutX="50.0" layoutY="155.0" prefHeight="450.0" prefWidth="900.0" />
       <ComboBox fx:id="methodPicker" layoutX="600.0" layoutY="50.0" prefWidth="150.0" />
       <Button layoutX="800.0" layoutY="50.0" mnemonicParsing="false" onAction="#resolve" text="Resolve" />
+      <Button layoutX="40.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Load Graph with Costs" />
    </children>
 </Pane>

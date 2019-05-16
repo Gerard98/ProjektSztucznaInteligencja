@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -52,11 +53,6 @@ public class Controller {
         observableList.add("BFS");
         observableList.add("DFS");
         methodPicker.setItems(observableList);
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("CHUJ");
-        //fileChooser.showOpenDialog(mainPane.getScene().getWindow());
-
 
     }
 
@@ -104,7 +100,7 @@ public class Controller {
             }
             else if(i%3 == 1){
                 circle.setLayoutY(y + 25);
-                circle.setLayoutX(x);
+                circle.setLayoutX(x+50);
             }
             else if(i%3 == 2){
                 circle.setLayoutY(y - 25);
@@ -149,8 +145,9 @@ public class Controller {
         listOfCircles.forEach(m -> {
             graphPane.getChildren().add(m);
             Label label = new Label(Integer.toString(m.getIndex()));
-            label.setLayoutX(m.getLayoutX());
-            label.setLayoutY(m.getLayoutY()-5);
+            label.setLayoutX(m.getLayoutX()-5);
+            label.setLayoutY(m.getLayoutY()-12);
+            label.setFont(Font.font(16));
             graphPane.getChildren().add(label);
         });
 
@@ -176,27 +173,51 @@ public class Controller {
 
     }
 
-    public void DFS(){
+    public void solveByDFS(){
 
+        Graph graph = new Graph(numberOfNodes);
+        listOfEdges.forEach(m -> {
+            graph.addEdge(m.getNode1()-1,m.getNode2()-1);
+        });
+        System.out.println(graph.toString());
+        StringBuilder result = new StringBuilder("Result: ");
+        DFSPaths dfs1 = new DFSPaths(graph, startNode-1);
+        for (int it : dfs1.getPathTo(endNode-1)) {
+            result.append((it+1) + " -> ");
+        }
+        result.delete(result.length()-3,result.length());
+        textArea.setText(result.toString());
     }
 
-    public void BFS(){
-
+    public void solveByBFS(){
+        Graph graph = new Graph(numberOfNodes);
+        listOfEdges.forEach(m -> {
+            graph.addEdge(m.getNode1()-1,m.getNode2()-1);
+        });
+        System.out.println(graph.toString());
+        StringBuilder result = new StringBuilder("Result: ");
+        BFSPaths bfs1 = new BFSPaths(graph, startNode-1);
+        for (int it : bfs1.getPathTo(endNode-1)) {
+            result.append((it+1) + " -> ");
+        }
+        result.delete(result.length()-3,result.length());
+        textArea.setText(result.toString());
     }
 
     @FXML
     public void resolve(){
         String method = (String) methodPicker.getSelectionModel().getSelectedItem();
         //System.out.println(method);
+        switch (method) {
+            case "BFS":
+                solveByBFS();
+                break;
+            case "DFS":
+                solveByDFS();
+                break;
+        }
         try {
-            switch (method) {
-                case "BFS":
 
-                    break;
-                case "DFS":
-
-                    break;
-            }
         }
         catch (NullPointerException ex){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
