@@ -21,5 +21,8 @@
       <RadioButton fx:id="moveNodes" layoutX="398.0" layoutY="50.0" mnemonicParsing="false" onAction="#moveNodesChanged" prefHeight="17.0" prefWidth="97.0" text="Move Nodes" />
       <RadioButton fx:id="addNode" layoutX="398.0" layoutY="71.0" mnemonicParsing="false" onAction="#addNodeChanged" text="Add Node" />
       <RadioButton fx:id="addEdge" layoutX="398.0" layoutY="93.0" mnemonicParsing="false" onAction="#addEdgeChanged" text="Add Edge" />
+      <Button layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#info1" prefHeight="25.0" prefWidth="25.0" text="?" />
+      <Button layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#info2" prefHeight="25.0" prefWidth="25.0" text="?" />
+      <Button layoutX="358.0" layoutY="116.0" mnemonicParsing="false" onAction="#generateNodes" text="Generate Start and End Nodes" />
    </children>
 </Pane>

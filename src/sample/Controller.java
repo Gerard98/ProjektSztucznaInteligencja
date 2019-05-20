@@ -1,26 +1,18 @@
 package sample;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Bounds;
 import javafx.geometry.Point2D;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Polygon;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -42,9 +34,9 @@ public class Controller {
     private List<MineCircle> listOfCircles = new LinkedList<>();
     private List<MineLine> listOfLines = new LinkedList<>();
     private List<MineLabel> listOfLabels = new LinkedList<>();
-    private int startNode;
-    private int endNode;
-    private int numberOfNodes;
+    private int startIndex;
+    private int endIndex;
+    private int numberOfNodes = 0;
 
     private boolean isFileLoaded = false;
     private File file;
@@ -76,8 +68,8 @@ public class Controller {
             Scanner in = new Scanner(file);
 
             numberOfNodes = in.nextInt();
-            startNode = in.nextInt();
-            endNode = in.nextInt();
+            startIndex = in.nextInt();
+            endIndex = in.nextInt();
 
             while(in.hasNext()){
                 Edge edge = new Edge();
@@ -200,8 +192,8 @@ public class Controller {
         });
         System.out.println(graph.toString());
         StringBuilder result = new StringBuilder("Result: ");
-        DFSPaths dfs1 = new DFSPaths(graph, startNode-1);
-        for (int it : dfs1.getPathTo(endNode-1)) {
+        DFSPaths dfs1 = new DFSPaths(graph, startIndex -1);
+        for (int it : dfs1.getPathTo(endIndex -1)) {
             result.append((it+1) + " -> ");
         }
         result.delete(result.length()-3,result.length());
@@ -215,8 +207,8 @@ public class Controller {
         });
         System.out.println(graph.toString());
         StringBuilder result = new StringBuilder("Result: ");
-        BFSPaths bfs1 = new BFSPaths(graph, startNode-1);
-        for (int it : bfs1.getPathTo(endNode-1)) {
+        BFSPaths bfs1 = new BFSPaths(graph, startIndex -1);
+        for (int it : bfs1.getPathTo(endIndex -1)) {
             result.append((it+1) + " -> ");
         }
         result.delete(result.length()-3,result.length());
@@ -246,6 +238,16 @@ public class Controller {
             alert.setContentText("Wybierz metodę przeszukiwania grafu!!");
             alert.show();
         }
+    }
+
+    public void generateLabel(int index, MineCircle mineCircle){
+        MineLabel mineLabel = new MineLabel(Integer.toString(index));
+        mineLabel.setCircleIndex(index);
+        mineLabel.setLayoutX(mineCircle.getLayoutX()-5);
+        mineLabel.setLayoutY(mineCircle.getLayoutY()-12);
+        mineLabel.setFont(Font.font(16));
+        listOfLabels.add(mineLabel);
+        graphPane.getChildren().add(mineLabel);
     }
 
     private boolean circleDragged = false;
@@ -300,16 +302,8 @@ public class Controller {
                 mineCircle.setIndex(++maxIndex);
                 listOfCircles.add(mineCircle);
 
-                MineLabel mineLabel = new MineLabel(Integer.toString(maxIndex));
-                mineLabel.setCircleIndex(maxIndex);
-                mineLabel.setLayoutX(mineCircle.getLayoutX()-5);
-                mineLabel.setLayoutY(mineCircle.getLayoutY()-12);
-                mineLabel.setFont(Font.font(16));
-
-                listOfLabels.add(mineLabel);
                 graphPane.getChildren().add(mineCircle);
-                graphPane.getChildren().add(mineLabel);
-
+                generateLabel(maxIndex, mineCircle);
 
             }
             catch (NoSuchElementException ex){
@@ -366,6 +360,7 @@ public class Controller {
 
                         creatingLine.toBack();
                         creatingLine.setEndIndex(m.getIndex());
+                        listOfLines.add(creatingLine);
                         newLine = true;
                         graphPane.removeEventHandler(MouseEvent.MOUSE_MOVED, lineFollowCursor);
 
@@ -427,6 +422,69 @@ public class Controller {
         else {
             graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, addNodeHandler);
         }
+    }
+
+    @FXML
+    public void info1(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Graph without Costs\nTo correctly work, date in file should look like:");
+        alert.setContentText("Number of Nodes\n" +
+                "Index of start node " + " Index of end node\n" +
+                "Index of first node in the edge " + " Index of second node in the edge\n " +
+                "\n" +
+                "Example:\n " +
+                "4\n" +
+                "1 4\n" +
+                "1 2\n" +
+                "1 3\n" +
+                "2 4\n"
+        );
+        alert.show();
+    }
+
+    public void info2(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Graph without Costs\nTo correctly work, date in file should look like:");
+        alert.setContentText("Number of Nodes\n" +
+                "Index of start node " + " Index of end node\n" +
+                "Index of first node in the edge " + " Index of second node in the edge " + " cost of edge\n" +
+                "\n" +
+                "Example:\n" +
+                "4\n" +
+                "1 4\n" +
+                "1 2 4\n" +
+                "1 3 3\n" +
+                "2 4 1\n"
+        );
+        alert.show();
+    }
+
+    public void generateNodes(){
+        if(listOfCircles.size() == 0) {
+            int y = 200;
+            int x = 50;
+            MineCircle startNode = new MineCircle(20, Color.GREEN);
+            startNode.setIndex(1);
+            startNode.setLayoutY(y + 25);
+            startNode.setLayoutX(x);
+            listOfCircles.add(startNode);
+            startIndex = 1;
+
+            MineCircle endNode = new MineCircle(20, Color.RED);
+            endNode.setIndex(2);
+            endNode.setLayoutY(y + 25);
+            endNode.setLayoutX(x + 100);
+            listOfCircles.add(endNode);
+            endIndex = 2;
+
+
+            numberOfNodes += 2;
+
+            graphPane.getChildren().addAll(startNode, endNode);
+            generateLabel(1, startNode);
+            generateLabel(2, endNode);
+        }
+
     }
 
 }
