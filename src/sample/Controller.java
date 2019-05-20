@@ -3,13 +3,15 @@ package sample;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
+import javafx.geometry.Point2D;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -34,10 +36,14 @@ public class Controller {
     private TextArea textArea;
     @FXML
     private ComboBox methodPicker;
+    @FXML
+    private RadioButton moveNodes;
 
 
     private List<Edge> listOfEdges = new LinkedList<>();
     private List<MineCircle> listOfCircles = new LinkedList<>();
+    private List<MineLine> listOfLines = new LinkedList<>();
+    private List<MineLabel> listOfLabels = new LinkedList<>();
     private int startNode;
     private int endNode;
     private int numberOfNodes;
@@ -131,23 +137,28 @@ public class Controller {
                     .findAny()
                     .orElse(null);
 
-            Line line = new Line();
+            MineLine line = new MineLine();
             line.setStartX(circle1.getLayoutX());
             line.setStartY(circle1.getLayoutY());
+            line.setStartIndex(circle1.getIndex());
             line.setEndX(circle2.getLayoutX());
             line.setEndY(circle2.getLayoutY());
+            line.setEndIndex(circle2.getIndex());
 
             line.setFill(Color.BLACK);
+            listOfLines.add(line);
             graphPane.getChildren().add(line);
 
         });
 
         listOfCircles.forEach(m -> {
             graphPane.getChildren().add(m);
-            Label label = new Label(Integer.toString(m.getIndex()));
+            MineLabel label = new MineLabel(Integer.toString(m.getIndex()));
             label.setLayoutX(m.getLayoutX()-5);
             label.setLayoutY(m.getLayoutY()-12);
             label.setFont(Font.font(16));
+            label.setCircleIndex(m.getIndex());
+            listOfLabels.add(label);
             graphPane.getChildren().add(label);
         });
 
@@ -223,6 +234,54 @@ public class Controller {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Wybierz metodę przeszukiwania grafu!!");
             alert.show();
+        }
+    }
+
+    private EventHandler<MouseEvent> moveNodesEvent = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+
+            listOfCircles.forEach(m -> {
+                System.out.println(event.getX() + " "+event.getY());
+                System.out.println(m.getBoundsInParent());
+                Point2D point = new Point2D(event.getX(), event.getY());
+                if(m.getBoundsInParent().contains(point)){
+                    m.setLayoutX(event.getX());
+                    m.setLayoutY(event.getY());
+
+                    listOfLines.forEach(n -> {
+                        if(n.getStartIndex() == m.getIndex()){
+                            n.setStartX(event.getX());
+                            n.setStartY(event.getY());
+                        }
+                        else if(n.getEndIndex() == m.getIndex()){
+                            n.setEndX(event.getX());
+                            n.setEndY(event.getY());
+                        }
+                    });
+
+                    listOfLabels.forEach(e -> {
+                        if(e.getCircleIndex() == m.getIndex()){
+                            e.setLayoutX(m.getLayoutX()-5);
+                            e.setLayoutY(m.getLayoutY()-12);
+                        }
+                    });
+
+                }
+            });
+
+        }
+    };
+
+
+    @FXML
+    public void moveNodesChanged(){
+
+        if(moveNodes.isSelected()){
+            graphPane.addEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
+        }
+        else {
+            graphPane.removeEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
         }
     }
 

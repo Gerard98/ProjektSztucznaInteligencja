@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 
@@ -9,9 +11,13 @@
    <children>
       <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#loadFileButton" prefHeight="25.0" prefWidth="163.0" text="Load Graph without Costs" />
       <TextArea fx:id="textArea" layoutX="50.0" layoutY="615.0" prefHeight="150.0" prefWidth="900.0" />
-      <Pane fx:id="graphPane" layoutX="50.0" layoutY="155.0" prefHeight="450.0" prefWidth="900.0" />
+      <Pane fx:id="graphPane" layoutX="50.0" layoutY="155.0" prefHeight="450.0" prefWidth="900.0">
+         <children>
+            <ScrollBar layoutY="440.0" max="2000.0" prefWidth="900.0" />
+         </children></Pane>
       <ComboBox fx:id="methodPicker" layoutX="600.0" layoutY="50.0" prefWidth="150.0" />
       <Button layoutX="800.0" layoutY="50.0" mnemonicParsing="false" onAction="#resolve" text="Resolve" />
       <Button layoutX="40.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Load Graph with Costs" />
+      <RadioButton fx:id="moveNodes" layoutX="398.0" layoutY="54.0" mnemonicParsing="false" onAction="#moveNodesChanged" prefHeight="17.0" prefWidth="97.0" text="Move Nodes" />
    </children>
 </Pane>
