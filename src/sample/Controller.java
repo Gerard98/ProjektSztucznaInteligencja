@@ -23,10 +23,8 @@ import javafx.stage.FileChooser;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Scanner;
 
 public class Controller {
 
@@ -37,7 +35,7 @@ public class Controller {
     @FXML
     private ComboBox methodPicker;
     @FXML
-    private RadioButton moveNodes;
+    private RadioButton moveNodes, addEdge, addNode;
 
 
     private List<Edge> listOfEdges = new LinkedList<>();
@@ -117,7 +115,6 @@ public class Controller {
             listOfCircles.add(circle);
         }
         MineCircle endNode = new MineCircle(20, Color.RED);
-        endNode.setIndex(8);
         endNode.setIndex(numberOfNodes);
         endNode.setLayoutY(y+25);
         endNode.setLayoutX(x+100);
@@ -242,8 +239,6 @@ public class Controller {
         public void handle(MouseEvent event) {
 
             listOfCircles.forEach(m -> {
-                System.out.println(event.getX() + " "+event.getY());
-                System.out.println(m.getBoundsInParent());
                 Point2D point = new Point2D(event.getX(), event.getY());
                 if(m.getBoundsInParent().contains(point)){
                     m.setLayoutX(event.getX());
@@ -273,15 +268,129 @@ public class Controller {
         }
     };
 
+    private EventHandler<MouseEvent> addNodeHandler = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            MineCircle mineCircle = new MineCircle(15,Color.LIGHTGRAY);
+            mineCircle.setLayoutX(event.getX());
+            mineCircle.setLayoutY(event.getY());
+            int maxIndex = listOfCircles.stream().max(Comparator.comparing(MineCircle::getIndex)).get().getIndex();
+            mineCircle.setIndex(++maxIndex);
+            listOfCircles.add(mineCircle);
+
+            MineLabel mineLabel = new MineLabel(Integer.toString(maxIndex));
+            mineLabel.setCircleIndex(maxIndex);
+            mineLabel.setLayoutX(mineCircle.getLayoutX()-5);
+            mineLabel.setLayoutY(mineCircle.getLayoutY()-12);
+            mineLabel.setFont(Font.font(16));
+
+            listOfLabels.add(mineLabel);
+            graphPane.getChildren().add(mineCircle);
+            graphPane.getChildren().add(mineLabel);
+        }
+    };
+
+
+    private boolean newLine = true;
+    private MineLine creatingLine;
+    private Edge edge;
+
+    private EventHandler<MouseEvent> lineFollowCursor = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            creatingLine.setEndY(event.getY());
+            creatingLine.setEndX(event.getX());
+        }
+    };
+    private EventHandler<MouseEvent> addEdgeHandler = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            Point2D point = new Point2D(event.getX(), event.getY());
+            boolean breakOut = false;
+            for(MineCircle m : listOfCircles){
+                if(m.getBoundsInParent().contains(point)){
+                    if(newLine && !breakOut){
+                        creatingLine = new MineLine();
+                        creatingLine.setStartIndex(m.getIndex());
+                        creatingLine.setStartX(m.getLayoutX());
+                        creatingLine.setStartY(m.getLayoutY());
+                        edge = new Edge();
+                        edge.setNode1(m.getIndex());
+                        creatingLine.setEndX(event.getX());
+                        creatingLine.setEndY(event.getY());
+
+                        newLine = false;
+                        graphPane.getChildren().add(creatingLine);
+                        graphPane.addEventHandler(MouseEvent.MOUSE_MOVED, lineFollowCursor);
+                    }
+                    else if(!newLine && !breakOut){
+                        creatingLine.setEndY(m.getLayoutY());
+                        creatingLine.setEndX(m.getLayoutX());
+                        edge.setNode2(m.getIndex());
+                        listOfEdges.add(edge);
+                        numberOfNodes++;
+                        creatingLine.toBack();
+                        creatingLine.setEndIndex(m.getIndex());
+                        newLine = true;
+                        graphPane.removeEventHandler(MouseEvent.MOUSE_MOVED, lineFollowCursor);
+
+                    }
+                    breakOut = true;
+                }
+
+            }
+            if(!breakOut){
+                if(!newLine){
+                    graphPane.getChildren().remove(creatingLine);
+                    creatingLine = null;
+                    edge = null;
+                    newLine = true;
+                    graphPane.removeEventHandler(MouseEvent.MOUSE_MOVED, lineFollowCursor);
+                }
+            }
+    }};
+
 
     @FXML
     public void moveNodesChanged(){
 
         if(moveNodes.isSelected()){
             graphPane.addEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
+            addEdge.setSelected(false);
+            addEdgeChanged();
+            addNode.setSelected(false);
+            addNodeChanged();
         }
         else {
             graphPane.removeEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
+        }
+    }
+
+    @FXML
+    public void addEdgeChanged(){
+        if(addEdge.isSelected()){
+            graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, addEdgeHandler);
+            moveNodes.setSelected(false);
+            moveNodesChanged();
+            addNode.setSelected(false);
+            addNodeChanged();
+        }
+        else {
+            graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, addEdgeHandler);
+        }
+    }
+
+    @FXML
+    public void addNodeChanged(){
+        if(addNode.isSelected()){
+            graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, addNodeHandler);
+            addEdge.setSelected(false);
+            addEdgeChanged();
+            moveNodes.setSelected(false);
+            moveNodesChanged();
+        }
+        else {
+            graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, addNodeHandler);
         }
     }
 
