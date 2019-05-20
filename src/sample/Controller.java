@@ -60,9 +60,19 @@ public class Controller {
 
     }
 
+    public void clean(){
+        graphPane.getChildren().clear();
+        listOfEdges.clear();
+        listOfLabels.clear();
+        listOfCircles.clear();
+        listOfLines.clear();
+    }
 
     public void loadEdgesFromFile(){
         try{
+
+            clean();
+
             Scanner in = new Scanner(file);
 
             numberOfNodes = in.nextInt();
@@ -167,16 +177,17 @@ public class Controller {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("CHUJ");
         file = fileChooser.showOpenDialog(mainPane.getScene().getWindow());
-        if(file.getAbsolutePath().endsWith(".txt")){
-            isFileLoaded = true;
-            loadEdgesFromFile();
-            drawGraph();
-        }
-        else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Plik musi być w formacie TXT");
-            alert.show();
-            isFileLoaded = false;
+        if(file != null) {
+            if (file.getAbsolutePath().endsWith(".txt")) {
+                isFileLoaded = true;
+                loadEdgesFromFile();
+                drawGraph();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Plik musi być w formacie TXT");
+                alert.show();
+                isFileLoaded = false;
+            }
         }
 
     }
@@ -216,16 +227,19 @@ public class Controller {
     public void resolve(){
         String method = (String) methodPicker.getSelectionModel().getSelectedItem();
         //System.out.println(method);
+        try {
         switch (method) {
             case "BFS":
-                solveByBFS();
+                if(listOfEdges.size() > 2){
+                    solveByBFS();
+                }
                 break;
             case "DFS":
-                solveByDFS();
+                if(listOfEdges.size() > 2){
+                    solveByDFS();
+                }
                 break;
         }
-        try {
-
         }
         catch (NullPointerException ex){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -234,13 +248,15 @@ public class Controller {
         }
     }
 
+    private boolean circleDragged = false;
     private EventHandler<MouseEvent> moveNodesEvent = new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent event) {
 
-            listOfCircles.forEach(m -> {
+            for(MineCircle m : listOfCircles){
                 Point2D point = new Point2D(event.getX(), event.getY());
-                if(m.getBoundsInParent().contains(point)){
+                if(m.getBoundsInParent().contains(point) && !circleDragged){
+                    circleDragged = true;
                     m.setLayoutX(event.getX());
                     m.setLayoutY(event.getY());
 
@@ -263,8 +279,8 @@ public class Controller {
                     });
 
                 }
-            });
-
+            }
+            circleDragged = false;
         }
     };
 
@@ -274,19 +290,34 @@ public class Controller {
             MineCircle mineCircle = new MineCircle(15,Color.LIGHTGRAY);
             mineCircle.setLayoutX(event.getX());
             mineCircle.setLayoutY(event.getY());
-            int maxIndex = listOfCircles.stream().max(Comparator.comparing(MineCircle::getIndex)).get().getIndex();
-            mineCircle.setIndex(++maxIndex);
-            listOfCircles.add(mineCircle);
+            try {
+                int maxIndex = listOfCircles
+                        .stream()
+                        .max(Comparator.comparing(MineCircle::getIndex))
+                        .get()
+                        .getIndex();
 
-            MineLabel mineLabel = new MineLabel(Integer.toString(maxIndex));
-            mineLabel.setCircleIndex(maxIndex);
-            mineLabel.setLayoutX(mineCircle.getLayoutX()-5);
-            mineLabel.setLayoutY(mineCircle.getLayoutY()-12);
-            mineLabel.setFont(Font.font(16));
+                mineCircle.setIndex(++maxIndex);
+                listOfCircles.add(mineCircle);
 
-            listOfLabels.add(mineLabel);
-            graphPane.getChildren().add(mineCircle);
-            graphPane.getChildren().add(mineLabel);
+                MineLabel mineLabel = new MineLabel(Integer.toString(maxIndex));
+                mineLabel.setCircleIndex(maxIndex);
+                mineLabel.setLayoutX(mineCircle.getLayoutX()-5);
+                mineLabel.setLayoutY(mineCircle.getLayoutY()-12);
+                mineLabel.setFont(Font.font(16));
+
+                listOfLabels.add(mineLabel);
+                graphPane.getChildren().add(mineCircle);
+                graphPane.getChildren().add(mineLabel);
+
+
+            }
+            catch (NoSuchElementException ex){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("You have to add start node firstly!!!");
+                alert.show();
+            }
+
         }
     };
 
@@ -314,8 +345,10 @@ public class Controller {
                         creatingLine.setStartIndex(m.getIndex());
                         creatingLine.setStartX(m.getLayoutX());
                         creatingLine.setStartY(m.getLayoutY());
+
                         edge = new Edge();
                         edge.setNode1(m.getIndex());
+
                         creatingLine.setEndX(event.getX());
                         creatingLine.setEndY(event.getY());
 
@@ -326,9 +359,11 @@ public class Controller {
                     else if(!newLine && !breakOut){
                         creatingLine.setEndY(m.getLayoutY());
                         creatingLine.setEndX(m.getLayoutX());
+
                         edge.setNode2(m.getIndex());
                         listOfEdges.add(edge);
                         numberOfNodes++;
+
                         creatingLine.toBack();
                         creatingLine.setEndIndex(m.getIndex());
                         newLine = true;
