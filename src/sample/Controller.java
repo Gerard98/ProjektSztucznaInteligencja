@@ -27,8 +27,9 @@ public class Controller {
     @FXML
     private ComboBox methodPicker;
     @FXML
-    private RadioButton moveNodes, addEdge, addNode;
-
+    private RadioButton moveNodes, addEdge, addNode, delete;
+    @FXML
+    private Button stepButton;
 
     private List<Edge> listOfEdges = new LinkedList<>();
     private List<MineCircle> listOfCircles = new LinkedList<>();
@@ -38,8 +39,13 @@ public class Controller {
     private int endIndex;
     private int numberOfNodes = 0;
 
+    private boolean isGraphWithCosts;
     private boolean isFileLoaded = false;
     private File file;
+
+    //
+    private DFS dfs;
+    //
 
     @FXML
     public void initialize() {
@@ -54,6 +60,9 @@ public class Controller {
 
     public void clean(){
         graphPane.getChildren().clear();
+        numberOfNodes = 0;
+        startIndex = 0;
+        endIndex = 0;
         listOfEdges.clear();
         listOfLabels.clear();
         listOfCircles.clear();
@@ -187,8 +196,8 @@ public class Controller {
     public void solveByDFS(){
 
         Graph graph = new Graph(numberOfNodes);
-        listOfEdges.forEach(m -> {
-            graph.addEdge(m.getNode1()-1,m.getNode2()-1);
+        listOfLines.forEach(m -> {
+            graph.addEdge(m.getStartIndex()-1, m.getEndIndex()-1);
         });
         System.out.println(graph.toString());
         StringBuilder result = new StringBuilder("Result: ");
@@ -198,12 +207,14 @@ public class Controller {
         }
         result.delete(result.length()-3,result.length());
         textArea.setText(result.toString());
+
+
     }
 
     public void solveByBFS(){
         Graph graph = new Graph(numberOfNodes);
-        listOfEdges.forEach(m -> {
-            graph.addEdge(m.getNode1()-1,m.getNode2()-1);
+        listOfLines.forEach(m -> {
+            graph.addEdge(m.getStartIndex()-1, m.getEndIndex()-1);
         });
         System.out.println(graph.toString());
         StringBuilder result = new StringBuilder("Result: ");
@@ -380,6 +391,34 @@ public class Controller {
             }
     }};
 
+    private EventHandler<MouseEvent> deleteHandler = new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent event) {
+            Point2D point = new Point2D(event.getX(), event.getY());
+            for(MineCircle circle : listOfCircles){
+                if(circle.getBoundsInParent().contains(point)){
+                    graphPane.getChildren().remove(circle);
+                    listOfLabels.removeIf(m -> {
+                        if(m.getCircleIndex() == circle.getIndex()){
+                            graphPane.getChildren().remove(m);
+                            return true;
+                        }
+                        return false;
+                    });
+                    listOfLines.removeIf(m -> {
+                        if(m.getStartIndex() == circle.getIndex() || m.getEndIndex()  == circle.getIndex()){
+                            graphPane.getChildren().remove(m);
+                            return true;
+                        }
+                        return false;
+                    });
+                    listOfCircles.remove(circle);
+                    break;
+                }
+            }
+        }
+    };
+
 
     @FXML
     public void moveNodesChanged(){
@@ -404,6 +443,8 @@ public class Controller {
             moveNodesChanged();
             addNode.setSelected(false);
             addNodeChanged();
+            delete.setSelected(false);
+            deleteChanged();
         }
         else {
             graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, addEdgeHandler);
@@ -418,11 +459,31 @@ public class Controller {
             addEdgeChanged();
             moveNodes.setSelected(false);
             moveNodesChanged();
+            delete.setSelected(false);
+            deleteChanged();
         }
         else {
             graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, addNodeHandler);
         }
     }
+
+    @FXML
+    public void deleteChanged(){
+        if(delete.isSelected()){
+            graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, deleteHandler);
+            addEdge.setSelected(false);
+            addEdgeChanged();
+            moveNodes.setSelected(false);
+            moveNodesChanged();
+            addNode.setSelected(false);
+            addNodeChanged();
+        }
+        else {
+            graphPane.removeEventHandler(MouseEvent.MOUSE_CLICKED, deleteHandler);
+        }
+    }
+
+
 
     @FXML
     public void info1(){
@@ -484,6 +545,29 @@ public class Controller {
             generateLabel(1, startNode);
             generateLabel(2, endNode);
         }
+
+    }
+
+    @FXML
+    public void reset(){
+        clean();
+    }
+
+
+    @FXML
+    public void step(){
+        if(dfs != null){
+            if(dfs.step()){
+                stepButton.setDisable(true);
+            }
+        }
+        else{
+            dfs = new DFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+            if(dfs.step()){
+                stepButton.setDisable(true);
+            }
+        }
+
 
     }
 

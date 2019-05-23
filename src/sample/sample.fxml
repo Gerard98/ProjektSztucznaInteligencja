@@ -24,5 +24,8 @@
       <Button layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#info1" prefHeight="25.0" prefWidth="25.0" text="?" />
       <Button layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#info2" prefHeight="25.0" prefWidth="25.0" text="?" />
       <Button layoutX="358.0" layoutY="116.0" mnemonicParsing="false" onAction="#generateNodes" text="Generate Start and End Nodes" />
+      <Button layoutX="83.0" layoutY="123.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+      <RadioButton fx:id="delete" layoutX="398.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteChanged" text="Delete" />
+      <Button fx:id="stepButton" layoutX="899.0" layoutY="50.0" mnemonicParsing="false" onAction="#step" text="Step" />
    </children>
 </Pane>
