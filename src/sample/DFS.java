@@ -9,9 +9,12 @@ public class DFS {
     private List<MineCircle> listOfCircles;
     private List<MineLine> listOflines;
     private int actuallyNode;
+    private int beforeNode;
     private int startNode;
     private int endNode;
     private int numberOfNodes;
+
+    private Stack<Integer> path = new Stack<>();
 
     private List<Integer> listOfEdges[];
 
@@ -29,6 +32,7 @@ public class DFS {
         }
         actuallyNode = startNode;
         loadEdges(listOfEdges);
+        path.push(startNode);
     }
 
     public void loadEdges(List<Edge> edges) {
@@ -41,9 +45,9 @@ public class DFS {
 
     public boolean step() {
         if (step == 0) {
-            listOfEdges[actuallyNode].forEach(m -> {
+            listOfEdges[path.peek()].forEach(m -> {
                 listOfCircles.forEach(n -> {
-                    if (n.getIndex() == actuallyNode) {
+                    if (n.getIndex() == path.peek()) {
                         n.setFill(Color.YELLOW);
                     } else if (n.getIndex() == m) {
                         n.setFill(Color.LIGHTBLUE);
@@ -53,47 +57,67 @@ public class DFS {
             step = 1;
         } else {
             try {
-                final int beforeNode = actuallyNode;
-                actuallyNode = listOfEdges[actuallyNode]
+                beforeNode = path.peek();
+                actuallyNode = listOfEdges[path.peek()]
                         .stream()
                         .min(Comparator.comparing(Integer::intValue))
                         .get();
-                listOfEdges[actuallyNode].removeIf(m -> m == beforeNode);
+
+                path.push(actuallyNode);
+                listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
 
                 listOflines.forEach(m -> {
                     if (m.getEndIndex() == beforeNode && m.getStartIndex() == actuallyNode || m.getEndIndex() == actuallyNode && m.getStartIndex() == beforeNode) {
-                        m.setStyle("-fx-stroke: red;");
+                        m.setStyle("-fx-stroke: red; -fx-stroke-width: 2px");
                     }
                 });
                 step = 0;
-                if (actuallyNode == endNode) {
+                if (path.peek() == endNode) {
                     return true;
                 }
                 return false;
             } catch (NoSuchElementException ex) {
-                if (actuallyNode != endNode) {
-                    final int beforeNode = actuallyNode - 1;
+                if (path.peek() != endNode) {
 
                     listOfCircles.forEach(n -> {
-                        if(n.getIndex() == actuallyNode){
+                        if(n.getIndex() == path.peek()){
                             n.setFill(Color.LIGHTGREY);
                         }
                     });
 
+                    beforeNode = path.peek();
+                    path.pop();
+
                     listOflines.forEach(n -> {
-                        if (n.getEndIndex() == beforeNode && n.getStartIndex() == actuallyNode || n.getEndIndex() == actuallyNode && n.getStartIndex() == beforeNode) {
+                        if (n.getEndIndex() == beforeNode && n.getStartIndex() == path.peek() || n.getEndIndex() == path.peek() && n.getStartIndex() == beforeNode) {
                             n.setStyle("-fx-stroke: black;");
                         }
                     });
 
-                    listOfEdges[beforeNode].removeIf(m -> m == actuallyNode);
-                    actuallyNode--;
+
+
+                    listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
+                    actuallyNode = path.peek();
                 }
             }
 
         }
         return false;
     }
+
+    public StringBuilder printResult(){
+
+        StringBuilder result = new StringBuilder("");
+
+        int k = path.size();
+        for(int i=0;i<k;i++){
+            result.append(path.firstElement() + " -> ");
+            path.removeElementAt(0);
+        }
+        result.delete(result.length()-3, result.length());
+        return result;
+    }
+
 }
 
 

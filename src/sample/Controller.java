@@ -557,15 +557,32 @@ public class Controller {
     @FXML
     public void step(){
         if(dfs != null){
-            if(dfs.step()){
+            if(dfs.step()) {
                 stepButton.setDisable(true);
+
+                listOfCircles.forEach(m -> {
+                    if(m.getIndex() == endIndex){
+                        m.setFill(Color.YELLOW);
+                    }
+                });
+                textArea.setText(dfs.printResult().toString());
             }
         }
         else{
             dfs = new DFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
-            if(dfs.step()){
+            if(dfs.step()) {
+
                 stepButton.setDisable(true);
+
+                listOfCircles.forEach(m -> {
+                    if (m.getIndex() == endIndex) {
+                        m.setFill(Color.YELLOW);
+                    }
+                });
+                textArea.setText(dfs.printResult().toString());
+
             }
+
         }
 
 
