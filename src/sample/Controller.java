@@ -67,6 +67,10 @@ public class Controller {
         listOfLabels.clear();
         listOfCircles.clear();
         listOfLines.clear();
+        methodPicker.setDisable(false);
+        stepButton.setDisable(false);
+        textArea.setText("");
+        dfs = null;
     }
 
     public void loadEdgesFromFile(){
@@ -556,6 +560,34 @@ public class Controller {
 
     @FXML
     public void step(){
+
+        String method = (String) methodPicker.getSelectionModel().getSelectedItem();
+        //System.out.println(method);
+        try {
+            switch (method) {
+                case "BFS":
+                    if(listOfEdges.size() > 2){
+                        solveByBFS();
+                    }
+                    break;
+                case "DFS":
+                    if(listOfEdges.size() > 2){
+                        stepDFS();
+                        methodPicker.setDisable(true);
+                    }
+                    break;
+            }
+        }
+        catch (NullPointerException ex){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Wybierz metodę przeszukiwania grafu!!");
+            alert.show();
+        }
+
+    }
+
+    public void stepDFS(){
+
         if(dfs != null){
             if(dfs.step()) {
                 stepButton.setDisable(true);

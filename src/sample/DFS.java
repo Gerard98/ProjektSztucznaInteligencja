@@ -49,8 +49,10 @@ public class DFS {
                 listOfCircles.forEach(n -> {
                     if (n.getIndex() == path.peek()) {
                         n.setFill(Color.YELLOW);
+                        //n.setStyle("-fx-stroke: yellow; -fx-stroke-width: 5px");
                     } else if (n.getIndex() == m) {
                         n.setFill(Color.LIGHTBLUE);
+                        //n.setStyle("-fx-stroke: lightblue; -fx-stroke-width: 5px");
                     }
                 });
             });
@@ -77,27 +79,31 @@ public class DFS {
                 }
                 return false;
             } catch (NoSuchElementException ex) {
-                if (path.peek() != endNode) {
+                try {
+                    if (path.peek() != endNode) {
 
-                    listOfCircles.forEach(n -> {
-                        if(n.getIndex() == path.peek()){
-                            n.setFill(Color.LIGHTGREY);
-                        }
-                    });
+                        listOfCircles.forEach(n -> {
+                            if (n.getIndex() == path.peek()) {
+                                n.setFill(Color.LIGHTGREY);
+                            }
+                        });
 
-                    beforeNode = path.peek();
-                    path.pop();
+                        beforeNode = path.peek();
+                        path.pop();
 
-                    listOflines.forEach(n -> {
-                        if (n.getEndIndex() == beforeNode && n.getStartIndex() == path.peek() || n.getEndIndex() == path.peek() && n.getStartIndex() == beforeNode) {
-                            n.setStyle("-fx-stroke: black;");
-                        }
-                    });
+                        listOflines.forEach(n -> {
+                            if (n.getEndIndex() == beforeNode && n.getStartIndex() == path.peek() || n.getEndIndex() == path.peek() && n.getStartIndex() == beforeNode) {
+                                n.setStyle("-fx-stroke: black;");
+                            }
+                        });
 
 
-
-                    listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
-                    actuallyNode = path.peek();
+                        listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
+                        actuallyNode = path.peek();
+                    }
+                }
+                catch(EmptyStackException ex2){
+                    return true;
                 }
             }
 
@@ -107,14 +113,20 @@ public class DFS {
 
     public StringBuilder printResult(){
 
-        StringBuilder result = new StringBuilder("");
+        StringBuilder result = new StringBuilder("Path: ");
 
         int k = path.size();
-        for(int i=0;i<k;i++){
-            result.append(path.firstElement() + " -> ");
-            path.removeElementAt(0);
+        if(k == 0){
+            result.append("There is no available path");
         }
-        result.delete(result.length()-3, result.length());
+        else{
+            for(int i=0;i<k;i++){
+                result.append(path.firstElement() + " -> ");
+                path.removeElementAt(0);
+            }
+            result.delete(result.length()-3, result.length());
+        }
+
         return result;
     }
 
