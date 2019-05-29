@@ -29,7 +29,7 @@ public class Controller {
     @FXML
     private RadioButton moveNodes, addEdge, addNode, delete;
     @FXML
-    private Button stepButton;
+    private Button stepButton,stepOver;
 
     private List<Edge> listOfEdges = new LinkedList<>();
     private List<MineCircle> listOfCircles = new LinkedList<>();
@@ -71,6 +71,7 @@ public class Controller {
         stepButton.setDisable(false);
         textArea.setText("");
         dfs = null;
+        stepOver.setDisable(false);
     }
 
     public void loadEdgesFromFile(){
@@ -237,13 +238,26 @@ public class Controller {
         try {
         switch (method) {
             case "BFS":
-                if(listOfEdges.size() > 2){
+                if(listOfEdges.size() > 0){
                     solveByBFS();
                 }
                 break;
             case "DFS":
-                if(listOfEdges.size() > 2){
-                    solveByDFS();
+                if(listOfEdges.size() > 0){
+                    if(dfs == null){
+                        dfs = new DFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+                    }
+                    while(!dfs.step());
+
+                    stepButton.setDisable(true);
+                    stepOver.setDisable(true);
+
+                    listOfCircles.forEach(m -> {
+                        if(m.getIndex() == endIndex){
+                            m.setFill(Color.YELLOW);
+                        }
+                    });
+                    textArea.setText(dfs.printResult().toString());
                 }
                 break;
         }
@@ -566,12 +580,12 @@ public class Controller {
         try {
             switch (method) {
                 case "BFS":
-                    if(listOfEdges.size() > 2){
+                    if(listOfEdges.size() > 0){
                         solveByBFS();
                     }
                     break;
                 case "DFS":
-                    if(listOfEdges.size() > 2){
+                    if(listOfEdges.size() > 0){
                         stepDFS();
                         methodPicker.setDisable(true);
                     }

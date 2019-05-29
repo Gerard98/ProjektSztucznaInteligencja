@@ -73,6 +73,17 @@ public class DFS {
                         m.setStyle("-fx-stroke: red; -fx-stroke-width: 2px");
                     }
                 });
+
+                listOfCircles.forEach(n -> {
+
+                    listOfEdges[beforeNode].forEach(m -> {
+                        if(n.getIndex() == m && m!= actuallyNode){
+                            n.setFill(Color.LIGHTGREY);
+                        }
+                    });
+
+                });
+
                 step = 0;
                 if (path.peek() == endNode) {
                     return true;
@@ -83,7 +94,7 @@ public class DFS {
                     if (path.peek() != endNode) {
 
                         listOfCircles.forEach(n -> {
-                            if (n.getIndex() == path.peek()) {
+                            if (n.getIndex() != path.peek()) {
                                 n.setFill(Color.LIGHTGREY);
                             }
                         });

@@ -9,20 +9,18 @@
 
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#loadFileButton" prefHeight="25.0" prefWidth="163.0" text="Load Graph without Costs" />
+      <Button layoutX="40.0" layoutY="50.0" mnemonicParsing="false" onAction="#loadFileButton" prefHeight="25.0" prefWidth="163.0" text="Load Graph" />
       <TextArea fx:id="textArea" layoutX="50.0" layoutY="615.0" prefHeight="150.0" prefWidth="900.0" />
       <Pane fx:id="graphPane" layoutX="50.0" layoutY="155.0" prefHeight="450.0" prefWidth="900.0">
          <children>
             <ScrollBar layoutY="440.0" max="2000.0" prefWidth="900.0" />
          </children></Pane>
       <ComboBox fx:id="methodPicker" layoutX="600.0" layoutY="50.0" prefWidth="150.0" />
-      <Button layoutX="800.0" layoutY="50.0" mnemonicParsing="false" onAction="#resolve" text="Resolve" />
-      <Button layoutX="40.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Load Graph with Costs" />
+      <Button fx:id="stepOver" layoutX="800.0" layoutY="50.0" mnemonicParsing="false" onAction="#resolve" text="Step over" />
       <RadioButton fx:id="moveNodes" layoutX="398.0" layoutY="50.0" mnemonicParsing="false" onAction="#moveNodesChanged" prefHeight="17.0" prefWidth="97.0" text="Move Nodes" />
       <RadioButton fx:id="addNode" layoutX="398.0" layoutY="71.0" mnemonicParsing="false" onAction="#addNodeChanged" text="Add Node" />
       <RadioButton fx:id="addEdge" layoutX="398.0" layoutY="93.0" mnemonicParsing="false" onAction="#addEdgeChanged" text="Add Edge" />
       <Button layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#info1" prefHeight="25.0" prefWidth="25.0" text="?" />
-      <Button layoutX="14.0" layoutY="80.0" mnemonicParsing="false" onAction="#info2" prefHeight="25.0" prefWidth="25.0" text="?" />
       <Button layoutX="358.0" layoutY="116.0" mnemonicParsing="false" onAction="#generateNodes" text="Generate Start and End Nodes" />
       <Button layoutX="83.0" layoutY="123.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
       <RadioButton fx:id="delete" layoutX="398.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteChanged" text="Delete" />
