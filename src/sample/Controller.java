@@ -45,6 +45,7 @@ public class Controller {
 
     //
     private DFS dfs;
+    private BFS bfs;
     //
 
     @FXML
@@ -71,6 +72,7 @@ public class Controller {
         stepButton.setDisable(false);
         textArea.setText("");
         dfs = null;
+        bfs = null;
         stepOver.setDisable(false);
     }
 
@@ -239,7 +241,15 @@ public class Controller {
         switch (method) {
             case "BFS":
                 if(listOfEdges.size() > 0){
-                    solveByBFS();
+
+                    bfs = new BFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+
+                    bfs.shortestPath();
+
+                    stepButton.setDisable(true);
+                    stepOver.setDisable(true);
+
+                    textArea.setText(bfs.printWholeResult().toString());
                 }
                 break;
             case "DFS":
@@ -581,7 +591,9 @@ public class Controller {
             switch (method) {
                 case "BFS":
                     if(listOfEdges.size() > 0){
-                        solveByBFS();
+                        stepBFS();
+                        methodPicker.setDisable(true);
+                        //stepOver.setDisable(true);
                     }
                     break;
                 case "DFS":
@@ -627,6 +639,39 @@ public class Controller {
                 });
                 textArea.setText(dfs.printResult().toString());
 
+            }
+
+        }
+
+
+    }
+
+    public void stepBFS(){
+
+        if(bfs != null){
+            if(bfs.step()) {
+                stepButton.setDisable(true);
+
+                listOfCircles.forEach(m -> {
+                    if(m.getIndex() == endIndex){
+                        m.setFill(Color.YELLOW);
+                    }
+                });
+                textArea.setText(bfs.printWholeResult().toString());
+            }
+        }
+        else{
+            bfs = new BFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+            if(bfs.step()) {
+
+                stepButton.setDisable(true);
+
+                listOfCircles.forEach(m -> {
+                    if (m.getIndex() == endIndex) {
+                        m.setFill(Color.YELLOW);
+                    }
+                });
+                textArea.setText(bfs.printWholeResult().toString());
             }
 
         }
