@@ -86,6 +86,11 @@ public class DFS {
 
                 step = 0;
                 if (path.peek() == endNode) {
+                    listOfCircles.forEach(m -> {
+                        if(m.getIndex() == endNode){
+                            m.setFill(Color.YELLOW);
+                        }
+                    });
                     return true;
                 }
                 return false;
@@ -94,7 +99,7 @@ public class DFS {
                     if (path.peek() != endNode) {
 
                         listOfCircles.forEach(n -> {
-                            if (n.getIndex() != path.peek()) {
+                            if (n.getIndex() == path.peek()) {
                                 n.setFill(Color.LIGHTGREY);
                             }
                         });
@@ -111,6 +116,7 @@ public class DFS {
 
                         listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
                         actuallyNode = path.peek();
+                        step = 0;
                     }
                 }
                 catch(EmptyStackException ex2){

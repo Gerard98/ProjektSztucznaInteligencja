@@ -133,7 +133,8 @@ public class BFS {
 
                     markNextNode = false;
                 }
-                step++;
+                //step = 0;
+                 step++;
             }
 
         }
@@ -186,19 +187,19 @@ public class BFS {
 
         while(v > -1) {
             resultList.add(0,v);
-//            listOfEdges[v].forEach(m -> {
+//           listOfEdges[v].forEach(m -> {
 //                listOfCircles.forEach(n -> {
-//                    if (n.getIndex() == v) {
-//                        n.setFill(Color.YELLOW);
-//                    }
-//                });
-//            });
+ //                  if (n.getIndex() == v) {
+//                       n.setFill(Color.YELLOW);
+//                   }
+ //              });
+ //          });
 //
-//            listOfLines.forEach(m -> {
-//                if (m.getEndIndex() == v && m.getStartIndex() == comeFrom[v] || m.getEndIndex() == v && m.getStartIndex() == comeFrom[v]) {
-//                    m.setStyle("-fx-stroke: red; -fx-stroke-width: 2px");
-//                }
-//            });
+ //          listOfLines.forEach(m -> {
+ //             if (m.getEndIndex() == v && m.getStartIndex() == comeFrom[v] || m.getEndIndex() == v && m.getStartIndex() == comeFrom[v]) {
+ //                  m.setStyle("-fx-stroke: red; -fx-stroke-width: 2px");
+ //              }
+//           });
 
             v = comeFrom[v];
         }

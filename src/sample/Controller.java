@@ -39,8 +39,6 @@ public class Controller {
     private int endIndex;
     private int numberOfNodes = 0;
 
-    private boolean isGraphWithCosts;
-    private boolean isFileLoaded = false;
     private File file;
 
     //
@@ -73,6 +71,7 @@ public class Controller {
         textArea.setText("");
         dfs = null;
         bfs = null;
+        setDisableRadioButtons(false);
         stepOver.setDisable(false);
     }
 
@@ -187,51 +186,17 @@ public class Controller {
         file = fileChooser.showOpenDialog(mainPane.getScene().getWindow());
         if(file != null) {
             if (file.getAbsolutePath().endsWith(".txt")) {
-                isFileLoaded = true;
                 loadEdgesFromFile();
                 drawGraph();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Plik musi być w formacie TXT");
                 alert.show();
-                isFileLoaded = false;
             }
         }
 
     }
 
-    public void solveByDFS(){
-
-        Graph graph = new Graph(numberOfNodes);
-        listOfLines.forEach(m -> {
-            graph.addEdge(m.getStartIndex()-1, m.getEndIndex()-1);
-        });
-        System.out.println(graph.toString());
-        StringBuilder result = new StringBuilder("Result: ");
-        DFSPaths dfs1 = new DFSPaths(graph, startIndex -1);
-        for (int it : dfs1.getPathTo(endIndex -1)) {
-            result.append((it+1) + " -> ");
-        }
-        result.delete(result.length()-3,result.length());
-        textArea.setText(result.toString());
-
-
-    }
-
-    public void solveByBFS(){
-        Graph graph = new Graph(numberOfNodes);
-        listOfLines.forEach(m -> {
-            graph.addEdge(m.getStartIndex()-1, m.getEndIndex()-1);
-        });
-        System.out.println(graph.toString());
-        StringBuilder result = new StringBuilder("Result: ");
-        BFSPaths bfs1 = new BFSPaths(graph, startIndex -1);
-        for (int it : bfs1.getPathTo(endIndex -1)) {
-            result.append((it+1) + " -> ");
-        }
-        result.delete(result.length()-3,result.length());
-        textArea.setText(result.toString());
-    }
 
     @FXML
     public void resolve(){
@@ -248,7 +213,7 @@ public class Controller {
 
                     stepButton.setDisable(true);
                     stepOver.setDisable(true);
-
+                    setDisableRadioButtons(true);
                     textArea.setText(bfs.printWholeResult().toString());
                 }
                 break;
@@ -261,12 +226,7 @@ public class Controller {
 
                     stepButton.setDisable(true);
                     stepOver.setDisable(true);
-
-                    listOfCircles.forEach(m -> {
-                        if(m.getIndex() == endIndex){
-                            m.setFill(Color.YELLOW);
-                        }
-                    });
+                    setDisableRadioButtons(true);
                     textArea.setText(dfs.printResult().toString());
                 }
                 break;
@@ -440,6 +400,12 @@ public class Controller {
                         }
                         return false;
                     });
+                    listOfEdges.removeIf(m -> {
+                        if(m.getNode1() == circle.getIndex() || m.getNode2()  == circle.getIndex()){
+                            return true;
+                        }
+                        return false;
+                    });
                     listOfCircles.remove(circle);
                     break;
                 }
@@ -457,6 +423,8 @@ public class Controller {
             addEdgeChanged();
             addNode.setSelected(false);
             addNodeChanged();
+            delete.setSelected(false);
+            deleteChanged();
         }
         else {
             graphPane.removeEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
@@ -531,23 +499,6 @@ public class Controller {
         alert.show();
     }
 
-    public void info2(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Graph without Costs\nTo correctly work, date in file should look like:");
-        alert.setContentText("Number of Nodes\n" +
-                "Index of start node " + " Index of end node\n" +
-                "Index of first node in the edge " + " Index of second node in the edge " + " cost of edge\n" +
-                "\n" +
-                "Example:\n" +
-                "4\n" +
-                "1 4\n" +
-                "1 2 4\n" +
-                "1 3 3\n" +
-                "2 4 1\n"
-        );
-        alert.show();
-    }
-
     public void generateNodes(){
         if(listOfCircles.size() == 0) {
             int y = 200;
@@ -617,26 +568,17 @@ public class Controller {
         if(dfs != null){
             if(dfs.step()) {
                 stepButton.setDisable(true);
-
-                listOfCircles.forEach(m -> {
-                    if(m.getIndex() == endIndex){
-                        m.setFill(Color.YELLOW);
-                    }
-                });
+                stepOver.setDisable(true);
                 textArea.setText(dfs.printResult().toString());
             }
         }
         else{
             dfs = new DFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+            setDisableRadioButtons(true);
             if(dfs.step()) {
 
                 stepButton.setDisable(true);
-
-                listOfCircles.forEach(m -> {
-                    if (m.getIndex() == endIndex) {
-                        m.setFill(Color.YELLOW);
-                    }
-                });
+                stepOver.setDisable(true);
                 textArea.setText(dfs.printResult().toString());
 
             }
@@ -662,6 +604,7 @@ public class Controller {
         }
         else{
             bfs = new BFS(startIndex,endIndex,listOfCircles,listOfLines,numberOfNodes,listOfEdges);
+            setDisableRadioButtons(true);
             if(bfs.step()) {
 
                 stepButton.setDisable(true);
@@ -677,6 +620,13 @@ public class Controller {
         }
 
 
+    }
+
+    public void setDisableRadioButtons(boolean value){
+        moveNodes.setDisable(value);
+        addEdge.setDisable(value);
+        addNode.setDisable(value);
+        delete.setDisable(value);
     }
 
 }
