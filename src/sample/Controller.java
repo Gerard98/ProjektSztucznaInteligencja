@@ -558,11 +558,9 @@ public class Controller {
         try {
             switch (method) {
                 case "BFS":
-                    if(listOfEdges.size() > 0){
-                        stepBFS();
-                        methodPicker.setDisable(true);
-                        //stepOver.setDisable(true);
-                    }
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("Step is available only for DFS algorithm");
+                    alert.show();
                     break;
                 case "DFS":
                     if(listOfEdges.size() > 0){

@@ -133,7 +133,6 @@ public class BFS {
 
                     markNextNode = false;
                 }
-                //step = 0;
                  step++;
             }
 
@@ -142,25 +141,6 @@ public class BFS {
         return false;
     }
 
-    public void wholeAlgorithm() {
-        visited[startNode] = true;
-        queue.add(startNode);
-
-        while(!queue.isEmpty()) {
-            startNode = queue.poll();
-
-            System.out.print(startNode + " -> ");
-
-            Iterator<Integer> i = neighbours[startNode].listIterator();
-            while(i.hasNext()){
-                int n = i.next();
-                if(!visited[n]){
-                    visited[n] = true;
-                    queue.add(n);
-                }
-            }
-        }
-    }
 
     public void shortestPath() {
         int v1 = startNode;
@@ -187,20 +167,6 @@ public class BFS {
 
         while(v > -1) {
             resultList.add(0,v);
-//           listOfEdges[v].forEach(m -> {
-//                listOfCircles.forEach(n -> {
- //                  if (n.getIndex() == v) {
-//                       n.setFill(Color.YELLOW);
-//                   }
- //              });
- //          });
-//
- //          listOfLines.forEach(m -> {
- //             if (m.getEndIndex() == v && m.getStartIndex() == comeFrom[v] || m.getEndIndex() == v && m.getStartIndex() == comeFrom[v]) {
- //                  m.setStyle("-fx-stroke: red; -fx-stroke-width: 2px");
- //              }
-//           });
-
             v = comeFrom[v];
         }
 
@@ -208,24 +174,6 @@ public class BFS {
             queue.remove();
         }
 
-    }
-
-    public StringBuilder printResult(){
-
-        StringBuilder result = new StringBuilder("Path: ");
-
-        int k = queue.size();
-        if(k == 0){
-            result.append("There is no available path");
-        }
-        else{
-            for(int i=0;i<k;i++){
-                result.append(queue.poll() + " -> ");
-            }
-            result.delete(result.length()-3, result.length());
-        }
-
-        return result;
     }
 
     public StringBuilder printWholeResult(){

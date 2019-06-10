@@ -3,16 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="c2f9ee03-b3e6-4eb1-bd59-8b1cee42b2a3" name="Default" comment="small changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/BFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/BFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/BFSPaths.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/DFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/DFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/DFSPaths.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Graph.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Graph.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="208" column="31" lean-forward="true" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
+            <state relative-caret-position="-636">
+              <caret line="564" column="27" lean-forward="true" selection-start-line="564" selection-start-column="27" selection-end-line="564" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1315#1656#0" />
@@ -73,24 +75,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+            <state relative-caret-position="221">
+              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loadEdges#0;class#BFS#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -120,6 +113,7 @@
       <find>isFileLoaded</find>
       <find>ste</find>
       <find>resol</find>
+      <find>step</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +122,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/BFS.java" />
         <option value="$PROJECT_DIR$/src/sample/DFS.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sample/BFS.java" />
       </list>
     </option>
   </component>
@@ -165,13 +159,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ProjektSztucznaInteligencja" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjektSztucznaInteligencja" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="Graph.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -181,6 +168,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560171286828" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -269,7 +257,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558005752551</updated>
-      <workItem from="1560165220575" duration="4592000" />
+      <workItem from="1560165220575" duration="5002000" />
     </task>
     <task id="LOCAL-00001" summary="jdklsa">
       <created>1558005837941</created>
@@ -285,11 +273,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560168990110</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="small changes">
+      <created>1560170889360</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560170889360</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4592000" />
+    <option name="totallyTimeSpent" value="5002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -347,7 +342,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
-          <line>610</line>
+          <line>608</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -401,24 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadEdges#0;class#BFS#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -428,8 +405,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="208" column="31" lean-forward="true" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
+        <state relative-caret-position="-636">
+          <caret line="564" column="27" lean-forward="true" selection-start-line="564" selection-start-column="27" selection-end-line="564" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1315#1656#0" />
@@ -445,6 +422,24 @@
             <element signature="e#16467#16956#0" />
             <element signature="e#16964#17590#0" />
             <element signature="e#18241#19051#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadEdges#0;class#BFS#0" />
           </folding>
         </state>
       </provider>
