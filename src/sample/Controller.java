@@ -31,6 +31,8 @@ public class Controller {
     @FXML
     private Button stepButton,stepOver;
 
+    private RadioButton activatedRadioButton;
+
     private List<Edge> listOfEdges = new LinkedList<>();
     private List<MineCircle> listOfCircles = new LinkedList<>();
     private List<MineLine> listOfLines = new LinkedList<>();
@@ -182,7 +184,7 @@ public class Controller {
     @FXML
     public void loadFileButton(){
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("CHUJ");
+        fileChooser.setTitle("Load file");
         file = fileChooser.showOpenDialog(mainPane.getScene().getWindow());
         if(file != null) {
             if (file.getAbsolutePath().endsWith(".txt")) {
@@ -190,7 +192,7 @@ public class Controller {
                 drawGraph();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Plik musi być w formacie TXT");
+                alert.setContentText("File must be in .txt format");
                 alert.show();
             }
         }
@@ -201,7 +203,13 @@ public class Controller {
     @FXML
     public void resolve(){
         String method = (String) methodPicker.getSelectionModel().getSelectedItem();
-        //System.out.println(method);
+        if(activatedRadioButton != null){
+            activatedRadioButton.setSelected(false);
+            deleteChanged();
+            moveNodesChanged();
+            addNodeChanged();
+            addEdgeChanged();
+        }
         try {
         switch (method) {
             case "BFS":
@@ -234,7 +242,7 @@ public class Controller {
         }
         catch (NullPointerException ex){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Wybierz metodę przeszukiwania grafu!!");
+            alert.setContentText("Take a method of search graph");
             alert.show();
         }
     }
@@ -419,6 +427,7 @@ public class Controller {
 
         if(moveNodes.isSelected()){
             graphPane.addEventHandler(MouseEvent.MOUSE_DRAGGED, moveNodesEvent);
+            activatedRadioButton = moveNodes;
             addEdge.setSelected(false);
             addEdgeChanged();
             addNode.setSelected(false);
@@ -435,6 +444,7 @@ public class Controller {
     public void addEdgeChanged(){
         if(addEdge.isSelected()){
             graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, addEdgeHandler);
+            activatedRadioButton = addEdge;
             moveNodes.setSelected(false);
             moveNodesChanged();
             addNode.setSelected(false);
@@ -451,6 +461,7 @@ public class Controller {
     public void addNodeChanged(){
         if(addNode.isSelected()){
             graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, addNodeHandler);
+            activatedRadioButton = addNode;
             addEdge.setSelected(false);
             addEdgeChanged();
             moveNodes.setSelected(false);
@@ -467,6 +478,7 @@ public class Controller {
     public void deleteChanged(){
         if(delete.isSelected()){
             graphPane.addEventHandler(MouseEvent.MOUSE_CLICKED, deleteHandler);
+            activatedRadioButton = delete;
             addEdge.setSelected(false);
             addEdgeChanged();
             moveNodes.setSelected(false);
@@ -535,9 +547,14 @@ public class Controller {
 
     @FXML
     public void step(){
-
         String method = (String) methodPicker.getSelectionModel().getSelectedItem();
-        //System.out.println(method);
+        if(activatedRadioButton != null){
+            activatedRadioButton.setSelected(false);
+            deleteChanged();
+            moveNodesChanged();
+            addNodeChanged();
+            addEdgeChanged();
+        }
         try {
             switch (method) {
                 case "BFS":

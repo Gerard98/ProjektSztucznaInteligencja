@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2f9ee03-b3e6-4eb1-bd59-8b1cee42b2a3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" afterPath="$PROJECT_DIR$/src/sample/Controller.java" />
+    <list default="true" id="c2f9ee03-b3e6-4eb1-bd59-8b1cee42b2a3" name="Default" comment="small changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/BFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/BFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/DFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjektSztucznaInteligencja/sample/DFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DFS.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#548#549#0" expanded="true" />
                 <element signature="e#576#577#0" expanded="true" />
@@ -31,77 +39,67 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding>
-                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-                <element signature="method#clean#0;class#Controller#0" expanded="false" />
-                <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-                <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-                <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-                <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-                <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-                <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-                <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-                <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-                <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-                <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-                <element signature="method#info1#0;class#Controller#0" expanded="false" />
-                <element signature="method#info2#0;class#Controller#0" expanded="false" />
-                <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-                <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BFS.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="106" column="46" lean-forward="false" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+            <state relative-caret-position="292">
+              <caret line="208" column="31" lean-forward="true" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-                <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-                <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-                <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-                <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-                <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
+                <element signature="e#1315#1656#0" />
+                <element signature="e#2111#2686#0" />
+                <element signature="e#2692#5100#0" />
+                <element signature="e#8485#8904#0" />
+                <element signature="class#11467:11672" />
+                <element signature="class#11732:13853" />
+                <element signature="class#13913:15383" />
+                <element signature="e#15043#15467#0" />
+                <element signature="e#15473#15964#0" />
+                <element signature="e#15970#16461#0" />
+                <element signature="e#16467#16956#0" />
+                <element signature="e#16964#17590#0" />
+                <element signature="e#18241#19051#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Graph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-887">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFS.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#loadEdges#0;class#BFS#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="176">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -115,19 +113,23 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>clea</find>
+      <find>stepOver</find>
+      <find>isFileLoaded</find>
+      <find>ste</find>
+      <find>resol</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/DFS.java" />
         <option value="$PROJECT_DIR$/src/sample/BFS.java" />
+        <option value="$PROJECT_DIR$/src/sample/DFS.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
       </list>
     </option>
@@ -139,20 +141,12 @@
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,13 +176,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -207,116 +199,65 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
+    <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" value="9" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="9.0" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="ProjektSztucznaInteligencja" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main.java" />
+      <module name="ProjektSztucznaInteligencja" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="9.0" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ProjektSztucznaInteligencja" />
-      <envs />
+      <option name="MAIN_CLASS_NAME" value="Main.java" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -328,6 +269,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1558005752551</updated>
+      <workItem from="1560165220575" duration="4592000" />
     </task>
     <task id="LOCAL-00001" summary="jdklsa">
       <created>1558005837941</created>
@@ -336,48 +278,63 @@
       <option name="project" value="LOCAL" />
       <updated>1558005837941</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="small changes">
+      <created>1560168990110</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560168990110</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32661718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11354167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24390244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.114605546" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26218852" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32979852" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.3296875" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jdklsa" />
-    <option name="LAST_COMMIT_MESSAGE" value="jdklsa" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,598 +345,48 @@
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
+          <line>610</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controller.java</url>
+          <line>549</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16443">
-          <caret line="609" column="26" lean-forward="false" selection-start-line="609" selection-start-column="26" selection-end-line="609" selection-end-column="26" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3564">
-          <caret line="134" column="60" lean-forward="true" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5508">
-          <caret line="204" column="77" lean-forward="false" selection-start-line="204" selection-start-column="77" selection-end-line="204" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8370">
-          <caret line="609" column="26" lean-forward="true" selection-start-line="609" selection-start-column="26" selection-end-line="609" selection-end-column="26" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4266">
-          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5740">
-          <caret line="287" column="28" lean-forward="false" selection-start-line="287" selection-start-column="28" selection-end-line="287" selection-end-column="28" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="55" column="6" lean-forward="false" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="68" column="72" lean-forward="true" selection-start-line="68" selection-start-column="72" selection-end-line="68" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1340">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="75" column="15" lean-forward="false" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4900">
-          <caret line="245" column="21" lean-forward="false" selection-start-line="245" selection-start-column="21" selection-end-line="245" selection-end-column="21" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="75" column="15" lean-forward="true" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6125">
-          <caret line="245" column="21" lean-forward="true" selection-start-line="245" selection-start-column="21" selection-end-line="245" selection-end-column="21" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProjektSztucznaInteligencja.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../asd/asd_ps1_1/asd_ps1/asd_ps1.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/asd/asd_ps1_1/asd_ps1/asd_ps1.iml" />
     <entry file="file://$PROJECT_DIR$/src/sample/MineLabel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/javafx.controls/javafx/scene/control/TextInputControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
-          <caret line="357" column="22" lean-forward="false" selection-start-line="357" selection-start-column="22" selection-end-line="357" selection-end-column="22" />
+          <caret line="357" column="22" selection-start-line="357" selection-start-column="22" selection-end-line="357" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#548#549#0" expanded="true" />
             <element signature="e#576#577#0" expanded="true" />
@@ -987,67 +394,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1782">
-          <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-887">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="17">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/BFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="106" column="46" lean-forward="false" selection-start-line="106" selection-start-column="46" selection-end-line="106" selection-end-column="46" />
+        <state relative-caret-position="299">
+          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#BFS#0;class#BFS#0" expanded="false" />
-            <element signature="method#loadEdges#0;class#BFS#0" expanded="false" />
-            <element signature="method#wholeAlgorithm#0;class#BFS#0" expanded="false" />
-            <element signature="method#shortestPath#0;class#BFS#0" expanded="false" />
-            <element signature="method#printResult#0;class#BFS#0" expanded="false" />
-            <element signature="method#printWholeResult#0;class#BFS#0" expanded="false" />
+            <element signature="method#loadEdges#0;class#BFS#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/DFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="292">
+          <caret line="208" column="31" lean-forward="true" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
           <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#clean#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadEdgesFromFile#0;class#Controller#0" expanded="false" />
-            <element signature="method#drawGraph#0;class#Controller#0" expanded="false" />
-            <element signature="method#loadFileButton#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByDFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#solveByBFS#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateLabel#0;class#Controller#0" expanded="false" />
-            <element signature="method#moveNodesChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEdgeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#addNodeChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#deleteChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#info1#0;class#Controller#0" expanded="false" />
-            <element signature="method#info2#0;class#Controller#0" expanded="false" />
-            <element signature="method#generateNodes#0;class#Controller#0" expanded="false" />
-            <element signature="method#stepDFS#0;class#Controller#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1315#1656#0" />
+            <element signature="e#2111#2686#0" />
+            <element signature="e#2692#5100#0" />
+            <element signature="e#8485#8904#0" />
+            <element signature="class#11467:11672" />
+            <element signature="class#11732:13853" />
+            <element signature="class#13913:15383" />
+            <element signature="e#15043#15467#0" />
+            <element signature="e#15473#15964#0" />
+            <element signature="e#15970#16461#0" />
+            <element signature="e#16467#16956#0" />
+            <element signature="e#16964#17590#0" />
+            <element signature="e#18241#19051#0" />
           </folding>
         </state>
       </provider>

@@ -14,6 +14,8 @@ public class DFS {
     private int endNode;
     private int numberOfNodes;
 
+    private List<Integer> visitedNodes = new LinkedList<>();
+
     private Stack<Integer> path = new Stack<>();
 
     private List<Integer> listOfEdges[];
@@ -33,6 +35,8 @@ public class DFS {
         actuallyNode = startNode;
         loadEdges(listOfEdges);
         path.push(startNode);
+        visitedNodes.add(startNode);
+
     }
 
     public void loadEdges(List<Edge> edges) {
@@ -60,11 +64,23 @@ public class DFS {
         } else {
             try {
                 beforeNode = path.peek();
-                actuallyNode = listOfEdges[path.peek()]
-                        .stream()
-                        .min(Comparator.comparing(Integer::intValue))
-                        .get();
 
+                boolean isLoopPosible = false;
+                do {
+                    actuallyNode = listOfEdges[path.peek()]
+                            .stream()
+                            .min(Comparator.comparing(Integer::intValue))
+                            .get();
+
+                    if (visitedNodes.stream().anyMatch(m -> m == actuallyNode)) {
+                        listOfEdges[path.peek()].removeIf(n -> n == actuallyNode);
+                        isLoopPosible = true;
+                    }
+                    else{
+                        isLoopPosible = false;
+                    }
+                }while(isLoopPosible);
+                visitedNodes.add(actuallyNode);
                 path.push(actuallyNode);
                 listOfEdges[path.peek()].removeIf(m -> m == beforeNode);
 
@@ -75,7 +91,6 @@ public class DFS {
                 });
 
                 listOfCircles.forEach(n -> {
-
                     listOfEdges[beforeNode].forEach(m -> {
                         if(n.getIndex() == m && m!= actuallyNode){
                             n.setFill(Color.LIGHTGREY);
